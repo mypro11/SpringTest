@@ -5,21 +5,48 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Hello From Spring Dispatcher Servlet!!!</h1>
-    <table>
-        <h2>Categories</h2>
-        <tr>
-        </tr>
-            <c:forEach var="category" items="${categories}">
-        <tr>
-            <td>
-                <a href="<c:out value="/category?id=${category.id}"/>">
-                <c:out value="${category.categoryName}"/>
-                           </a>
-            </td>
-        </tr>
-        </c:forEach>
-    </table>
-    <a href="<c:out value="/category/add"/>"><h4>Add new category</h4></a>
+
+<%@include file="/WEB-INF/views/header.jsp"%>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="inner cover">
+
+                <table>
+                    <!-- here should go some titles... -->
+                    <h2>Categories</h2>
+                    <tr>
+                    </tr>
+                    <c:forEach var="category" items="${categories}">
+                        <tr>
+                            <td>
+                                <a href="<c:out value="/category?id=${category.id}"/>">
+                                    <c:out value="${category.categoryName}"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
 </body>
 </html>

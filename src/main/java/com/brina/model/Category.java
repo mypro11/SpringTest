@@ -3,10 +3,6 @@ package com.brina.model;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Bogdan on 27.04.2017.
- */
-
 @Entity
 @Table(name = "Categories")
 public class Category {

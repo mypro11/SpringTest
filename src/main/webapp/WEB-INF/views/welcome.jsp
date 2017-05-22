@@ -4,6 +4,6 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Hello ${welcomeUser.name}!!!</h1>
+    <h1>Hello ${welcomeUser.username}!!!</h1>
 </body>
 </html>

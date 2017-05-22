@@ -7,26 +7,27 @@
 </head>
 <body>
 
+<c:if test="${not empty message}">
+    <div class="msg">
+            ${message}
+    </div>
+</c:if>
 
-    <c:if test="${not empty message}">
+
+<form:form method="post" action="/j_spring_security_check" modelAttribute="newUser">
+    <c:if test="${not empty error}">
         <div class="msg">
-                ${message}
+                ${error}
         </div>
     </c:if>
+    <form:label path="username">Name</form:label>
+    <form:input type="text" path="username"/>
 
+    <form:label path="password">Password</form:label>
+    <form:input path="password" type="password"/>
 
-    <form:form method="post" action="/login" modelAttribute="newUser">
-        <c:if test="${not empty error}">
-            <div class="msg">
-                    ${error}
-            </div>
-        </c:if>
-        <form:label path="name">Name</form:label>
-        <form:input type="text" path="name"/>
-
-        <form:label path="password">Password</form:label>
-        <form:input path="password" type="password"/>
-        <button type="submit">Log In</button>
-    </form:form>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+    <button type="submit">Log In</button>
+</form:form>
 </body>
 </html>
